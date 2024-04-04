@@ -17,7 +17,7 @@ public class ModalidadeEntities {
     private String quadra;
 
     @Column
-    private String campos;
+    private String campo;
 
     @Column
     private String areia;
@@ -38,12 +38,12 @@ public class ModalidadeEntities {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof ModalidadeEntities that)) return false;
-        return id == that.id && Objects.equals(quadra, that.quadra) && Objects.equals(campos, that.campos) && Objects.equals(areia, that.areia) && Objects.equals(campo_sintetico, that.campo_sintetico) && Objects.equals(salao, that.salao) && Objects.equals(rua, that.rua) && Objects.equals(outros, that.outros);
+        return id == that.id && Objects.equals(quadra, that.quadra) && Objects.equals(campo, that.campo) && Objects.equals(areia, that.areia) && Objects.equals(campo_sintetico, that.campo_sintetico) && Objects.equals(salao, that.salao) && Objects.equals(rua, that.rua) && Objects.equals(outros, that.outros);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, quadra, campos, areia, campo_sintetico, salao, rua, outros);
+        return Objects.hash(id, quadra, campo, areia, campo_sintetico, salao, rua, outros);
     }
 
     public int getId() {
@@ -62,12 +62,12 @@ public class ModalidadeEntities {
         this.quadra = quadra;
     }
 
-    public String getCampos() {
-        return campos;
+    public String getCampo() {
+        return campo;
     }
 
-    public void setCampos(String campos) {
-        this.campos = campos;
+    public void setCampos(String campo) {
+        this.campo = campo;
     }
 
     public String getAreia() {

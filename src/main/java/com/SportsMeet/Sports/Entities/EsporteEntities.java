@@ -31,95 +31,105 @@ public class EsporteEntities {
     @Column (name = "sinuca")
     private String sinuca;
 
-    @Column (name = "bicicleta")
-    private String bicicleta;
+    @Column (name = "ciclismo")
+    private String ciclismo;
 
     @Column (name = "futmesa")
     private String futmesa;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof EsporteEntities that)) return false;
-        return id == that.id && Objects.equals(futebol, that.futebol) && Objects.equals(volei, that.volei) && Objects.equals(basquete, that.basquete) && Objects.equals(xadrez, that.xadrez) && Objects.equals(domino, that.domino) && Objects.equals(sinuca, that.sinuca) && Objects.equals(bicicleta, that.bicicleta) && Objects.equals(futmesa, that.futmesa);
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(basquete, ciclismo, domino, futebol, futmesa, id, sinuca, volei, xadrez);
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, futebol, volei, basquete, xadrez, domino, sinuca, bicicleta, futmesa);
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof EsporteEntities)) {
+			return false;
+		}
+		EsporteEntities other = (EsporteEntities) obj;
+		return Objects.equals(basquete, other.basquete) && Objects.equals(ciclismo, other.ciclismo)
+				&& Objects.equals(domino, other.domino) && Objects.equals(futebol, other.futebol)
+				&& Objects.equals(futmesa, other.futmesa) && id == other.id && Objects.equals(sinuca, other.sinuca)
+				&& Objects.equals(volei, other.volei) && Objects.equals(xadrez, other.xadrez);
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getFutebol() {
-        return futebol;
-    }
+	public String getFutebol() {
+		return futebol;
+	}
 
-    public void setFutebol(String futebol) {
-        this.futebol = futebol;
-    }
+	public void setFutebol(String futebol) {
+		this.futebol = futebol;
+	}
 
-    public String getVolei() {
-        return volei;
-    }
+	public String getVolei() {
+		return volei;
+	}
 
-    public void setVolei(String volei) {
-        this.volei = volei;
-    }
+	public void setVolei(String volei) {
+		this.volei = volei;
+	}
 
-    public String getBasquete() {
-        return basquete;
-    }
+	public String getBasquete() {
+		return basquete;
+	}
 
-    public void setBasquete(String basquete) {
-        this.basquete = basquete;
-    }
+	public void setBasquete(String basquete) {
+		this.basquete = basquete;
+	}
 
-    public String getXadrez() {
-        return xadrez;
-    }
+	public String getXadrez() {
+		return xadrez;
+	}
 
-    public void setXadrez(String xadrez) {
-        this.xadrez = xadrez;
-    }
+	public void setXadrez(String xadrez) {
+		this.xadrez = xadrez;
+	}
 
-    public String getDomino() {
-        return domino;
-    }
+	public String getDomino() {
+		return domino;
+	}
 
-    public void setDomino(String domino) {
-        this.domino = domino;
-    }
+	public void setDomino(String domino) {
+		this.domino = domino;
+	}
 
-    public String getSinuca() {
-        return sinuca;
-    }
+	public String getSinuca() {
+		return sinuca;
+	}
 
-    public void setSinuca(String sinuca) {
-        this.sinuca = sinuca;
-    }
+	public void setSinuca(String sinuca) {
+		this.sinuca = sinuca;
+	}
 
-    public String getBicicleta() {
-        return bicicleta;
-    }
+	public String getCiclismo() {
+		return ciclismo;
+	}
 
-    public void setBicicleta(String bicicleta) {
-        this.bicicleta = bicicleta;
-    }
+	public void setCiclismo(String ciclismo) {
+		this.ciclismo = ciclismo;
+	}
 
-    public String getFutmesa() {
-        return futmesa;
-    }
+	public String getFutmesa() {
+		return futmesa;
+	}
 
-    public void setFutmesa(String futmesa) {
-        this.futmesa = futmesa;
-    }
+	public void setFutmesa(String futmesa) {
+		this.futmesa = futmesa;
+	}
+
+    
 
 }
 

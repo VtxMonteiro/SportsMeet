@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.sql.Time;
 import java.util.Objects;
 
 @Entity
@@ -20,70 +21,80 @@ public class EventoEntities {
     private String descricao;
 
     @Column(name = "horario")
-    private String horario;
-
+    private Time horario;
+    
+    @Column (name = "qtd_pessoa")
     private int qtd_pessoa;
 
-    @Column(name = "Organizador")
-    private String Organizador;
+    @Column(name = "organizador")
+    private String organizador;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof EventoEntities that)) return false;
-        return id == that.id && qtd_pessoa == that.qtd_pessoa && Objects.equals(nome_evento, that.nome_evento) && Objects.equals(descricao, that.descricao) && Objects.equals(horario, that.horario) && Objects.equals(Organizador, that.Organizador);
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(descricao, horario, id, nome_evento, organizador, qtd_pessoa);
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nome_evento, descricao, horario, qtd_pessoa, Organizador);
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof EventoEntities)) {
+			return false;
+		}
+		EventoEntities other = (EventoEntities) obj;
+		return Objects.equals(descricao, other.descricao) && Objects.equals(horario, other.horario) && id == other.id
+				&& Objects.equals(nome_evento, other.nome_evento) && Objects.equals(organizador, other.organizador)
+				&& qtd_pessoa == other.qtd_pessoa;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getNome_evento() {
-        return nome_evento;
-    }
+	public String getNome_evento() {
+		return nome_evento;
+	}
 
-    public void setNome_evento(String nome_evento) {
-        this.nome_evento = nome_evento;
-    }
+	public void setNome_evento(String nome_evento) {
+		this.nome_evento = nome_evento;
+	}
 
-    public String getDescricao() {
-        return descricao;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	public Time getHorario() {
+		return horario;
+	}
 
-    public String getHorario() {
-        return horario;
-    }
+	public void setHorario(Time horario) {
+		this.horario = horario;
+	}
 
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
+	public int getQtd_pessoa() {
+		return qtd_pessoa;
+	}
 
-    public int getQtd_pessoa() {
-        return qtd_pessoa;
-    }
+	public void setQtd_pessoa(int qtd_pessoa) {
+		this.qtd_pessoa = qtd_pessoa;
+	}
 
-    public void setQtd_pessoa(int qtd_pessoa) {
-        this.qtd_pessoa = qtd_pessoa;
-    }
+	public String getOrganizador() {
+		return organizador;
+	}
 
-    public String getOrganizador() {
-        return Organizador;
-    }
+	public void setOrganizador(String organizador) {
+		this.organizador = organizador;
+	}
 
-    public void setOrganizador(String organizador) {
-        Organizador = organizador;
-    }
+   
 }

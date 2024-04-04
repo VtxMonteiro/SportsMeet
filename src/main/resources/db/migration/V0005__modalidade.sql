@@ -8,7 +8,7 @@ CREATE TABLE modalidade(
 	salao varchar(100) not null,
 	rua varchar(100) not null,
 	outros varchar(100) not null,
-	id_esporte int not null,
+	id_esporte int,
 	constraint esporte_fk FOREIGN KEY (id_esporte) references esporte (id),
 	status TINYINT DEFAULT 1
 
