@@ -24,7 +24,7 @@ import com.SportsMeet.Sports.Service.EnderecoService;
 
 @CrossOrigin(origins = "http://localhost:5173/")
 
-@RequestMapping("/Endereco")
+@RequestMapping("/enderecos")
 
 public class EnderecoController {
 	

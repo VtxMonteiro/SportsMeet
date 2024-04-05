@@ -22,7 +22,7 @@ import com.SportsMeet.Sports.Service.ModalidadeService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173/")
-@RequestMapping("/Modalidade")
+@RequestMapping("/modalidades")
 public class ModalidadeController {
 
     @Autowired

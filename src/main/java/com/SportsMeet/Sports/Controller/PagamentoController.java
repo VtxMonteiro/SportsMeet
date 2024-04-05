@@ -24,7 +24,7 @@ import com.SportsMeet.Sports.Service.PagamentoService;
 
 @CrossOrigin(origins = "http://localhost:5173/")
 
-@RequestMapping("/Pagamento")
+@RequestMapping("/pagamentos")
 
 public class PagamentoController {
 	

@@ -22,7 +22,7 @@ import com.SportsMeet.Sports.Service.EsporteService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173/")
-@RequestMapping("/Esporte")
+@RequestMapping("/esportes")
 public class EsporteController {
 
     @Autowired

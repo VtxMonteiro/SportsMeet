@@ -23,7 +23,7 @@ import com.SportsMeet.Sports.Service.InfoEventoService;
 @RestController
 @CrossOrigin(origins = "http://localhost:5173/")
 
-@RequestMapping("/InfoEvento")
+@RequestMapping("/infoEventos")
 
 public class InfoEventoController {
 	
