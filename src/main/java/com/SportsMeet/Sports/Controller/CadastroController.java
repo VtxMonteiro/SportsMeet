@@ -24,7 +24,7 @@ import com.SportsMeet.Sports.Service.CadastroService;
 
 @CrossOrigin(origins = "http://localhost:5173/")
 
-@RequestMapping("/Cadastro")
+@RequestMapping("/cadastros")
 
 public class CadastroController {
 
