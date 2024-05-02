@@ -1,11 +1,11 @@
 CREATE TABLE evento(
 
    id int auto_increment PRIMARY KEY Not NULL,
-    nome_evento varchar(100) not null,
-    descricao varchar(100) not null,
+    nome_evento varchar(30) not null,
+    descricao varchar(30) not null,
     horario time NOT NULL,
     qtd_pessoa int not null,
-    organizador varchar(100) not null,
+    organizador varchar(40) not null,
     id_endereco int,
     id_modalidade int,
     id_pagamento int,
