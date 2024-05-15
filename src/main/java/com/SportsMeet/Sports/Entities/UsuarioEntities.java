@@ -1,5 +1,6 @@
 package com.SportsMeet.Sports.Entities;
 
+import java.sql.Date;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -8,46 +9,39 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Cadastro")
+@Table(name = "Usuario")
 
 public class UsuarioEntities {
-	
-	@Id 
+
+	@Id
 	private int id;
-	
+
 	@Column(name = "nome_cadastro")
 	private String nome_cadastro;
-	
+
 	@Column(name = "cpf_cadastro")
 	private String cpf_cadastro;
-	
+
 	@Column(name = "email_cadastro")
 	private String email_cadastro;
-	
-	@Column(name = "idade_cadastro")
-	private String idade_cadastro;
-	
+
+	@Column(name = "data_nascimento")
+	private Date data_nascimento;
+
 	@Column(name = "telefone_cadastro")
 	private String telefone_cadastro;
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(cpf_cadastro, email_cadastro, id, idade_cadastro, nome_cadastro, telefone_cadastro);
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		UsuarioEntities that = (UsuarioEntities) o;
+		return id == that.id && Objects.equals(nome_cadastro, that.nome_cadastro) && Objects.equals(cpf_cadastro, that.cpf_cadastro) && Objects.equals(email_cadastro, that.email_cadastro) && Objects.equals(data_nascimento, that.data_nascimento) && Objects.equals(telefone_cadastro, that.telefone_cadastro);
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof UsuarioEntities)) {
-			return false;
-		}
-		UsuarioEntities other = (UsuarioEntities) obj;
-		return Objects.equals(cpf_cadastro, other.cpf_cadastro) && Objects.equals(email_cadastro, other.email_cadastro)
-				&& id == other.id && Objects.equals(idade_cadastro, other.idade_cadastro)
-				&& Objects.equals(nome_cadastro, other.nome_cadastro)
-				&& Objects.equals(telefone_cadastro, other.telefone_cadastro);
+	public int hashCode() {
+		return Objects.hash(id, nome_cadastro, cpf_cadastro, email_cadastro, data_nascimento, telefone_cadastro);
 	}
 
 	public int getId() {
@@ -82,12 +76,12 @@ public class UsuarioEntities {
 		this.email_cadastro = email_cadastro;
 	}
 
-	public String getIdade_cadastro() {
-		return idade_cadastro;
+	public Date getData_nascimento() {
+		return data_nascimento;
 	}
 
-	public void setIdade_cadastro(String idade_cadastro) {
-		this.idade_cadastro = idade_cadastro;
+	public void setData_nascimento(Date data_nascimento) {
+		this.data_nascimento = data_nascimento;
 	}
 
 	public String getTelefone_cadastro() {
@@ -97,7 +91,6 @@ public class UsuarioEntities {
 	public void setTelefone_cadastro(String telefone_cadastro) {
 		this.telefone_cadastro = telefone_cadastro;
 	}
-
-
-	
 }
+
+
