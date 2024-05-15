@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Cadastro")
 
-public class CadastroEntities {
+public class UsuarioEntities {
 	
 	@Id 
 	private int id;
@@ -40,10 +40,10 @@ public class CadastroEntities {
 		if (this == obj) {
 			return true;
 		}
-		if (!(obj instanceof CadastroEntities)) {
+		if (!(obj instanceof UsuarioEntities)) {
 			return false;
 		}
-		CadastroEntities other = (CadastroEntities) obj;
+		UsuarioEntities other = (UsuarioEntities) obj;
 		return Objects.equals(cpf_cadastro, other.cpf_cadastro) && Objects.equals(email_cadastro, other.email_cadastro)
 				&& id == other.id && Objects.equals(idade_cadastro, other.idade_cadastro)
 				&& Objects.equals(nome_cadastro, other.nome_cadastro)

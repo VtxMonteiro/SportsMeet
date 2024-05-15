@@ -17,50 +17,49 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.SportsMeet.Sports.Entities.PagamentoEntities;
-import com.SportsMeet.Sports.Service.PagamentoService;
+import com.SportsMeet.Sports.Entities.UsuarioEntities;
+import com.SportsMeet.Sports.Service.UsuarioService;
 
 @RestController
 
 @CrossOrigin(origins = "http://localhost:5173/")
 
-@RequestMapping("/pagamentos")
+@RequestMapping("/usuarios")
 
-public class PagamentoController {
-	
+public class UsuarioController {
+
 	@Autowired
-	private PagamentoService pagamentoService;
+	private UsuarioService usuarioService;
 	
 	@GetMapping
-	public List<PagamentoEntities> listarTodas(){
+	public List<UsuarioEntities> listarTodas(){
 		
-		return pagamentoService.listarTodas();
+		return usuarioService.listarTodas();
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<PagamentoEntities>> buscarPorId( @PathVariable Integer id){
+	public ResponseEntity<Optional<UsuarioEntities>> buscarPorId(@PathVariable Integer id){
 		
-		Optional<PagamentoEntities> pagamento = pagamentoService.buscarPorId(id);
+		Optional<UsuarioEntities> usuario = usuarioService.buscarPorId(id);
 		
-		return pagamentoService.isPresent() ? ResponseEntity.ok(pagamento): ResponseEntity.notFound().build();
+		return usuarioService.isPresent() ? ResponseEntity.ok(usuario): ResponseEntity.notFound().build();
 		}
 	
 	@PostMapping
-	public ResponseEntity<PagamentoEntities> salvar (@RequestBody PagamentoEntities pagamento){
+	public ResponseEntity<UsuarioEntities> salvar (@RequestBody UsuarioEntities cadastro){
 
-		return ResponseEntity.status(HttpStatus.CREATED).body(pagamentoService.salvar(pagamento));
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.salvar(cadastro));
 	}
 	
 	@PutMapping ("/{id}")
-	public ResponseEntity<PagamentoEntities> atualizar (@PathVariable int id, @RequestBody PagamentoEntities pagamento){
+	public ResponseEntity<UsuarioEntities> atualizar (@PathVariable int id, @RequestBody UsuarioEntities cadastro){
 		
-		return ResponseEntity.ok(pagamentoService.atualizar(id, pagamento));
+		return ResponseEntity.ok(usuarioService.atualizar(id, cadastro));
 	}
 	@DeleteMapping ("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable int id) {
-		pagamentoService.deletar(id);
+		usuarioService.deletar(id);
 		
 	}
-
 }
