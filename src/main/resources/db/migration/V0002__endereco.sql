@@ -1,12 +1,10 @@
 Create TABLE endereco(
 
-	id int auto_increment PRIMARY KEY Not NULL,
-	rua varchar (50) Not Null,
-	bairro varchar (30) Not Null,
-	logradouro varchar (20) Not Null,
-	cidade varchar (20) Not Null,
-    status TINYINT DEFAULT 1
-
-
+    ID_Endereco int primary key not null,
+	cep varchar(10) not null,
+	uf varchar (2) not null,
+	bairro varchar(30) not null,
+	logradouro varchar(100) not null,
+	cidade varchar (30) not null
 
 )

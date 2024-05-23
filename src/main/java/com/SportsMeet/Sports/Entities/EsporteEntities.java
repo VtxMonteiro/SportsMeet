@@ -13,48 +13,24 @@ public class EsporteEntities {
 
     @Id
     private int id;
-    @Column (name = "futebol")
-    private String futebol;
 
-    @Column (name = "volei")
-    private String volei;
+    @Column (name = "NomeEsporte")
+    private String NomeEsporte;
 
-    @Column (name = "basquete")
-    private String basquete;
-
-    @Column (name = "xadrez")
-    private String xadrez;
-
-    @Column (name = "domino")
-    private String domino;
-
-    @Column (name = "sinuca")
-    private String sinuca;
-
-    @Column (name = "ciclismo")
-    private String ciclismo;
-
-    @Column (name = "futmesa")
-    private String futmesa;
+	@Column (name = "ModalidadeID")
+	private String ModalidadeID;
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(basquete, ciclismo, domino, futebol, futmesa, id, sinuca, volei, xadrez);
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		EsporteEntities that = (EsporteEntities) o;
+		return id == that.id && Objects.equals(NomeEsporte, that.NomeEsporte) && Objects.equals(ModalidadeID, that.ModalidadeID);
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof EsporteEntities)) {
-			return false;
-		}
-		EsporteEntities other = (EsporteEntities) obj;
-		return Objects.equals(basquete, other.basquete) && Objects.equals(ciclismo, other.ciclismo)
-				&& Objects.equals(domino, other.domino) && Objects.equals(futebol, other.futebol)
-				&& Objects.equals(futmesa, other.futmesa) && id == other.id && Objects.equals(sinuca, other.sinuca)
-				&& Objects.equals(volei, other.volei) && Objects.equals(xadrez, other.xadrez);
+	public int hashCode() {
+		return Objects.hash(id, NomeEsporte, ModalidadeID);
 	}
 
 	public int getId() {
@@ -65,72 +41,21 @@ public class EsporteEntities {
 		this.id = id;
 	}
 
-	public String getFutebol() {
-		return futebol;
+	public String getNomeEsporte() {
+		return NomeEsporte;
 	}
 
-	public void setFutebol(String futebol) {
-		this.futebol = futebol;
+	public void setNomeEsporte(String nomeEsporte) {
+		NomeEsporte = nomeEsporte;
 	}
 
-	public String getVolei() {
-		return volei;
+	public String getModalidadeID() {
+		return ModalidadeID;
 	}
 
-	public void setVolei(String volei) {
-		this.volei = volei;
+	public void setModalidadeID(String modalidadeID) {
+		ModalidadeID = modalidadeID;
 	}
-
-	public String getBasquete() {
-		return basquete;
-	}
-
-	public void setBasquete(String basquete) {
-		this.basquete = basquete;
-	}
-
-	public String getXadrez() {
-		return xadrez;
-	}
-
-	public void setXadrez(String xadrez) {
-		this.xadrez = xadrez;
-	}
-
-	public String getDomino() {
-		return domino;
-	}
-
-	public void setDomino(String domino) {
-		this.domino = domino;
-	}
-
-	public String getSinuca() {
-		return sinuca;
-	}
-
-	public void setSinuca(String sinuca) {
-		this.sinuca = sinuca;
-	}
-
-	public String getCiclismo() {
-		return ciclismo;
-	}
-
-	public void setCiclismo(String ciclismo) {
-		this.ciclismo = ciclismo;
-	}
-
-	public String getFutmesa() {
-		return futmesa;
-	}
-
-	public void setFutmesa(String futmesa) {
-		this.futmesa = futmesa;
-	}
-
-    
-
 }
 
 
